@@ -1,0 +1,51 @@
+﻿@page
+@model SportfieldbookingWEB1.Pages.Reservas.IndexModel
+@{
+    ViewData["Title"] = "Index Reservas";
+}
+
+<h1>Index Reservas</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].FechaHoraInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].FechaHoraFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].Estado)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reservas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaHoraInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaHoraFin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <span></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
