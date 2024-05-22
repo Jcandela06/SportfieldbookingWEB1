@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SportfieldbookingWEB1.Data;
+
 namespace SportfieldbookingWEB1
 {
     public class Program
@@ -8,6 +11,11 @@ namespace SportfieldbookingWEB1
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            //Agregando al Contexto SportFieldBooking a la aplicacion
+            builder.Services.AddDbContext<SportFieldContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("SportFieldBookingDB"))
+            );
 
             var app = builder.Build();
 
