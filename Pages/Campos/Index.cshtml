@@ -1,0 +1,57 @@
+﻿@page
+@model SportfieldbookingWEB1.Pages.Campos.IndexModel
+@{
+    ViewData["Title"] = "Index Campos";
+}
+
+<h1>Index Campos</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Campos[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Campos[0].Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Campos[0].Ubicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Campos[0].TarifaHora)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Campos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ubicacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TarifaHora)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <span></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

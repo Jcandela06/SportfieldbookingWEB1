@@ -1,0 +1,63 @@
+﻿@page
+@model SportfieldbookingWEB1.Pages.Eventos.IndexModel
+@{
+    ViewData["Title"] = "Index Eventos";
+}
+
+<h1>Index Eventos</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventos[0].NombreEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventos[0].FechaEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventos[0].HoraInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventos[0].HoraFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eventos[0].Descripcion)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Eventos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraFin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <span></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
