@@ -8,8 +8,8 @@
         public string Tipo { get; set; }
         public string Ubicacion { get; set; }
         public int TarifaHora { get; set; }
-        public ICollection<Reserva> Reservas { get; set; }
-        public ICollection<Evento> Eventos { get; set; }
+        public ICollection<Reserva>? Reservas { get; set; }
+        public ICollection<Evento>? Eventos { get; set; }
 
     }
 }
