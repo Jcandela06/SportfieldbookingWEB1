@@ -12,6 +12,12 @@ namespace SportfieldbookingWEB1
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Account/Login";
+            });
+
             //Agregando al Contexto SportFieldBooking a la aplicacion
             builder.Services.AddDbContext<SportFieldContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("SportFieldBookingDB"))

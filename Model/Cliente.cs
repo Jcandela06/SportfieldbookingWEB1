@@ -7,6 +7,6 @@
         public string Ápellido { get; set; }
         public int Telefono { get; set; }
         public string Email { get; set; }
-        public ICollection<Reserva> Reservas { get; set; }
+        public ICollection<Reserva>? Reservas { get; set; }
     }
 }
