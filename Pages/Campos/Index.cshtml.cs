@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SportfieldbookingWEB1.Data;
 using SportfieldbookingWEB1.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SportfieldbookingWEB1.Pages.Campos
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
 		private readonly SportFieldContext _context;
